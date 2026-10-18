@@ -1,0 +1,16 @@
+{
+  "name": "headless-group-listener",
+  "version": "1.0.0",
+  "description": "24/7 Read-Only Headless WhatsApp Community Roster Listener (Zero Ban Risk, No Messages Sent)",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.7.16",
+    "express": "^4.21.2",
+    "pino": "^9.6.0",
+    "qrcode": "^1.5.4"
+  }
+}
