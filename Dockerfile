@@ -1,15 +1,17 @@
 FROM node:20-alpine
 
-WORKDIR /app
+# Non-root user required by Hugging Face Spaces (UID 1000)
+USER node
+WORKDIR /home/node/app
 
-COPY package*.json ./
+COPY --chown=node:node package*.json ./
 RUN npm install --omit=dev
 
-COPY . .
+COPY --chown=node:node . .
 
-EXPOSE 3000
+EXPOSE 7860
 
-ENV PORT=3000
+ENV PORT=7860
 ENV NODE_ENV=production
 
 CMD ["npm", "start"]
